@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_654afaa1b57e42c996bee693ebfc3a8f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+    <div style="position: fixed; bottom: 10px; right: 10px; z-index: 1000; background-color: white; padding: 10px; border: 2px solid grey;font-family:Poppins">
+        <h4></h4>
+        <ul style="list-style-type: none; padding: 0;">
+            <li><i style="background: green; padding: 5px;"></i>- Reduce</li>
+            <li><i style="background: red; padding: 5px;"></i>- Repair</li>
+            <li><i style="background: darkblue; padding: 5px;"></i>- Reuse</li>
+            <!-- Add more categories and colors as needed -->
+        </ul>
+    </div>
+    
+    
+            <div class="folium-map" id="map_654afaa1b57e42c996bee693ebfc3a8f" ></div>
+        
+</body>
+<script>    
+    
+            var map_654afaa1b57e42c996bee693ebfc3a8f = L.map(
+                "map_654afaa1b57e42c996bee693ebfc3a8f",
+                {
+                    center: [55.02540749519414, -1.5409688068645544],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9469f3ee543b40e7b29e9cba63c7efc4 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+        
+    
+            var feature_group_ee82f2d2dba04b01b2cb044207302f40 = L.featureGroup(
+                {}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+        
+    
+            var marker_09b7dd7f08b948a3b37d2d7b6c23017c = L.marker(
+                [55.01131899999999, -1.582532],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_062cd25262884f49aee18f4f6327f475 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_09b7dd7f08b948a3b37d2d7b6c23017c.setIcon(icon_062cd25262884f49aee18f4f6327f475);
+        
+    
+        var popup_a4d26e32cbf34d9494d1a64891cce005 = L.popup({"maxWidth": 500});
+
+        
+            var html_c976fb830120428c839d889062ba81d5 = $(`<div id="html_c976fb830120428c839d889062ba81d5" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Bread and Butter Thing</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Food hubs offer weekly groceries for a fraction of high street prices. The food available varies weekly and includes fresh fruit and vegetables, chilled food, and cupboard staples. Not only is the food available at low cost, it is also environmentally positive as it redistributes large quantities of perfectly good food that would have otherwise gone to waste.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Longbenton Community Centre                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Closed                         </div>                         <div>                             <strong>Tuesday:</strong> 2:00pm                         </div>                         <div>                             <strong>Wednesday:</strong> Closed                         </div>                         <div>                             <strong>Thursday:</strong> Closed                         </div>                         <div>                             <strong>Friday:</strong> Closed                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.breadandbutterthing.org/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_a4d26e32cbf34d9494d1a64891cce005.setContent(html_c976fb830120428c839d889062ba81d5);
+        
+
+        marker_09b7dd7f08b948a3b37d2d7b6c23017c.bindPopup(popup_a4d26e32cbf34d9494d1a64891cce005)
+        ;
+
+        
+    
+    
+            marker_09b7dd7f08b948a3b37d2d7b6c23017c.bindTooltip(
+                `<div>
+                     Bread and Butter Thing
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6d355f5fb5cc421eb6780bde4c1a3c27 = L.marker(
+                [55.03249479, -1.5072683999999998],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_735abde1956040c8af7d22a5148d143f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_6d355f5fb5cc421eb6780bde4c1a3c27.setIcon(icon_735abde1956040c8af7d22a5148d143f);
+        
+    
+        var popup_e050c6dd3d164043b692545aaed5567d = L.popup({"maxWidth": 500});
+
+        
+            var html_edc5ad1cb1824ac4a5a8902e1d789cb4 = $(`<div id="html_edc5ad1cb1824ac4a5a8902e1d789cb4" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Bread and Butter Thing</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Food hubs offer weekly groceries for a fraction of high street prices. The food available varies weekly and includes fresh fruit and vegetables, chilled food, and cupboard staples. Not only is the food available at low cost, it is also environmentally positive as it redistributes large quantities of perfectly good food that would have otherwise gone to waste.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Shiremoor Adventure Playground                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Closed                         </div>                         <div>                             <strong>Tuesday:</strong> Closed                         </div>                         <div>                             <strong>Wednesday:</strong> 1.30pm                         </div>                         <div>                             <strong>Thursday:</strong> Closed                         </div>                         <div>                             <strong>Friday:</strong> Closed                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.breadandbutterthing.org/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_e050c6dd3d164043b692545aaed5567d.setContent(html_edc5ad1cb1824ac4a5a8902e1d789cb4);
+        
+
+        marker_6d355f5fb5cc421eb6780bde4c1a3c27.bindPopup(popup_e050c6dd3d164043b692545aaed5567d)
+        ;
+
+        
+    
+    
+            marker_6d355f5fb5cc421eb6780bde4c1a3c27.bindTooltip(
+                `<div>
+                     Bread and Butter Thing
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_90f94ef3f44743a4a44a10065c92e43c = L.marker(
+                [55.05800241, -1.58774336],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_7aae7c6b1f8c4efa8d0c27de3999dc54 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_90f94ef3f44743a4a44a10065c92e43c.setIcon(icon_7aae7c6b1f8c4efa8d0c27de3999dc54);
+        
+    
+        var popup_6c25abdd8e6948e285e42ac38e03b1cc = L.popup({"maxWidth": 500});
+
+        
+            var html_179c48fbf06849d388b3ba5fe93e454d = $(`<div id="html_179c48fbf06849d388b3ba5fe93e454d" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Bread and Butter Thing</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Food hubs offer weekly groceries for a fraction of high street prices. The food available varies weekly and includes fresh fruit and vegetables, chilled food, and cupboard staples. Not only is the food available at low cost, it is also environmentally positive as it redistributes large quantities of perfectly good food that would have otherwise gone to waste.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Fordley Primary School                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Closed                         </div>                         <div>                             <strong>Tuesday:</strong> Closed                         </div>                         <div>                             <strong>Wednesday:</strong> Closed                         </div>                         <div>                             <strong>Thursday:</strong>  1.45pm                         </div>                         <div>                             <strong>Friday:</strong> Closed                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.breadandbutterthing.org/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_6c25abdd8e6948e285e42ac38e03b1cc.setContent(html_179c48fbf06849d388b3ba5fe93e454d);
+        
+
+        marker_90f94ef3f44743a4a44a10065c92e43c.bindPopup(popup_6c25abdd8e6948e285e42ac38e03b1cc)
+        ;
+
+        
+    
+    
+            marker_90f94ef3f44743a4a44a10065c92e43c.bindTooltip(
+                `<div>
+                     Bread and Butter Thing
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_307420ef0a2140899b99352d7492f3f3 = L.marker(
+                [55.0011074, -1.4976204180000001],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_c477407f85d5444a8e695d198eb99b52 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_307420ef0a2140899b99352d7492f3f3.setIcon(icon_c477407f85d5444a8e695d198eb99b52);
+        
+    
+        var popup_0829bf606d6d49e7b657b8c179e1b246 = L.popup({"maxWidth": 500});
+
+        
+            var html_fb3d4bd9afef4d04a33deb057c3469ff = $(`<div id="html_fb3d4bd9afef4d04a33deb057c3469ff" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Bread and Butter Thing</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Food hubs offer weekly groceries for a fraction of high street prices. The food available varies weekly and includes fresh fruit and vegetables, chilled food, and cupboard staples. Not only is the food available at low cost, it is also environmentally positive as it redistributes large quantities of perfectly good food that would have otherwise gone to waste.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Family Gateway                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Closed                         </div>                         <div>                             <strong>Tuesday:</strong> Closed                         </div>                         <div>                             <strong>Wednesday:</strong> Closed                         </div>                         <div>                             <strong>Thursday:</strong> Closed                         </div>                         <div>                             <strong>Friday:</strong> 1.30pm                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.breadandbutterthing.org/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_0829bf606d6d49e7b657b8c179e1b246.setContent(html_fb3d4bd9afef4d04a33deb057c3469ff);
+        
+
+        marker_307420ef0a2140899b99352d7492f3f3.bindPopup(popup_0829bf606d6d49e7b657b8c179e1b246)
+        ;
+
+        
+    
+    
+            marker_307420ef0a2140899b99352d7492f3f3.bindTooltip(
+                `<div>
+                     Bread and Butter Thing
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8c661c70433d40c2acf9076bc516c547 = L.marker(
+                [54.99663605, -1.502280417],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_423b5c8245184b84b8c1de75c98568bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_8c661c70433d40c2acf9076bc516c547.setIcon(icon_423b5c8245184b84b8c1de75c98568bf);
+        
+    
+        var popup_3422fe09efd948a6b11a3fd17517f34c = L.popup({"maxWidth": 500});
+
+        
+            var html_d4255aacd23c4c8dabb62b6dbd0b310d = $(`<div id="html_d4255aacd23c4c8dabb62b6dbd0b310d" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Greggs Outlet</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             The idea of the Greggs Outlet is to help cut down on food waste and provide cheaper food to people in need. The Outlets sell food that is a day old, but still perfectly safe to eat - with discounts of up to 75% off. Some of the profits of each Outlet also go to The Greggs Foundation which is given to local community groups.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             18 Tynemouth Rd, Howdon, Wallsend NE28 0LF                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> 7 am–4:30 pm                         </div>                         <div>                             <strong>Tuesday:</strong> 7 am–4:30 pm                         </div>                         <div>                             <strong>Wednesday:</strong> 7 am–4:30 pm                         </div>                         <div>                             <strong>Thursday:</strong> 7 am–4:30 pm                         </div>                         <div>                             <strong>Friday:</strong> 7 am–4:30 pm                         </div>                         <div>                             <strong>Saturday:</strong> 7 am–4:30 pm                         </div>                         <div>                             <strong>Sunday:</strong> 8 am–3 pm                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.greggs.co.uk/news/everything-you-need-to-know-about-greggs-outlet-shops" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_3422fe09efd948a6b11a3fd17517f34c.setContent(html_d4255aacd23c4c8dabb62b6dbd0b310d);
+        
+
+        marker_8c661c70433d40c2acf9076bc516c547.bindPopup(popup_3422fe09efd948a6b11a3fd17517f34c)
+        ;
+
+        
+    
+    
+            marker_8c661c70433d40c2acf9076bc516c547.bindTooltip(
+                `<div>
+                     Greggs Outlet
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1febe0d8ce6f4620ae062db353b5c9e0 = L.marker(
+                [54.97408584, -1.562168188],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_c68c2f89ed8c41a392113c910b60b454 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_1febe0d8ce6f4620ae062db353b5c9e0.setIcon(icon_c68c2f89ed8c41a392113c910b60b454);
+        
+    
+        var popup_9aeca69fec254730a78104a1ae0a8e68 = L.popup({"maxWidth": 500});
+
+        
+            var html_6b186dae282547c1b78a3104f4233e44 = $(`<div id="html_6b186dae282547c1b78a3104f4233e44" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Greggs Outlet</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             The idea of the Greggs Outlet is to help cut down on food waste and provide cheaper food to people in need. The Outlets sell food that is a day old, but still perfectly safe to eat - with discounts of up to 75% off. Some of the profits of each Outlet also go to The Greggs Foundation which is given to local community groups.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             265 Welbeck Rd, Walker, Newcastle upon Tyne NE6 2QX                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> 7 am–4 pm                         </div>                         <div>                             <strong>Tuesday:</strong> 7 am–4 pm                         </div>                         <div>                             <strong>Wednesday:</strong> 7 am–4 pm                         </div>                         <div>                             <strong>Thursday:</strong> 7 am–4 pm                         </div>                         <div>                             <strong>Friday:</strong> 7 am–4 pm                         </div>                         <div>                             <strong>Saturday:</strong> 7:30 am–3:30 pm                         </div>                         <div>                             <strong>Sunday:</strong> 8:30 am–3 pm                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.greggs.co.uk/news/everything-you-need-to-know-about-greggs-outlet-shops" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_9aeca69fec254730a78104a1ae0a8e68.setContent(html_6b186dae282547c1b78a3104f4233e44);
+        
+
+        marker_1febe0d8ce6f4620ae062db353b5c9e0.bindPopup(popup_9aeca69fec254730a78104a1ae0a8e68)
+        ;
+
+        
+    
+    
+            marker_1febe0d8ce6f4620ae062db353b5c9e0.bindTooltip(
+                `<div>
+                     Greggs Outlet
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d9a9394a7b0b4ce3a91459cdc7f166db = L.marker(
+                [55.00412044, -1.4641959009999999],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_8826bfea047248aabc860787c3800a73 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_d9a9394a7b0b4ce3a91459cdc7f166db.setIcon(icon_8826bfea047248aabc860787c3800a73);
+        
+    
+        var popup_dd029ddce34b4a29b761f7ed2013eba5 = L.popup({"maxWidth": 500});
+
+        
+            var html_b464f9e35fba41708357fd4bd9d333e8 = $(`<div id="html_b464f9e35fba41708357fd4bd9d333e8" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>The Nourish Store</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Our community membership store has been created to bridge the gap between standard supermarkets and food banks to offer a successful, quality shopping experience via a weekly membership system. It supports those on low incomes to reduce food costs, allowing people to better manage their other expenses as well tackling the environmental impact the food industry has on the planet with surplus food waste. Members simply pay £4 to get at least £15 worth of shopping, which includes fresh fruit and vegetables, ambient, chilled, and frozen foods as well as toiletries and cleaning goods too.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Cedarwood Centre, The Avenue, Avon Ave, North Shields NE29 7QT                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> 9 am–4 pm                         </div>                         <div>                             <strong>Tuesday:</strong> 9 am–4 pm                         </div>                         <div>                             <strong>Wednesday:</strong> 9 am–4 pm                         </div>                         <div>                             <strong>Thursday:</strong> 9 am–4 pm                         </div>                         <div>                             <strong>Friday:</strong> 9 am–4 pm                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.cedarwoodtrust.com/nourish.html" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_dd029ddce34b4a29b761f7ed2013eba5.setContent(html_b464f9e35fba41708357fd4bd9d333e8);
+        
+
+        marker_d9a9394a7b0b4ce3a91459cdc7f166db.bindPopup(popup_dd029ddce34b4a29b761f7ed2013eba5)
+        ;
+
+        
+    
+    
+            marker_d9a9394a7b0b4ce3a91459cdc7f166db.bindTooltip(
+                `<div>
+                     The Nourish Store
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e37f90a4182f46e2bcd62bbe9be6c461 = L.marker(
+                [55.00196054, -1.467722365],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_6dae51990f034354bdb5ffd245f0415d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_e37f90a4182f46e2bcd62bbe9be6c461.setIcon(icon_6dae51990f034354bdb5ffd245f0415d);
+        
+    
+        var popup_b34ee28979a64f5dbc061236e622e531 = L.popup({"maxWidth": 500});
+
+        
+            var html_3d383955a66d4ca599b7bc946ee6469b = $(`<div id="html_3d383955a66d4ca599b7bc946ee6469b" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>The Bay Foodbank</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Our aim is to provide food in an emergency to individuals, couples and families who find themselves in financial crisis.  This is only possible through the support of everyone who helps by donating the food, money and time needed. We thank you for all your help.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Meadow Well Way, Waterville Rd, North Shields NE29 6BA                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> 10 am–4 pmClosed                         </div>                         <div>                             <strong>Tuesday:</strong> 10 am–4 pm                         </div>                         <div>                             <strong>Wednesday:</strong> 10 am–4 pm                         </div>                         <div>                             <strong>Thursday:</strong> 10 am–4 pm                         </div>                         <div>                             <strong>Friday:</strong> 10 am–4 pm                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="http://www.thebayfoodbank.org.uk/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_b34ee28979a64f5dbc061236e622e531.setContent(html_3d383955a66d4ca599b7bc946ee6469b);
+        
+
+        marker_e37f90a4182f46e2bcd62bbe9be6c461.bindPopup(popup_b34ee28979a64f5dbc061236e622e531)
+        ;
+
+        
+    
+    
+            marker_e37f90a4182f46e2bcd62bbe9be6c461.bindTooltip(
+                `<div>
+                     The Bay Foodbank
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cef893877cef4d44beacab0e82e9b4ad = L.marker(
+                [54.991544, -1.535492289],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_5155074f0501491bb881b06fb2fc0390 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_cef893877cef4d44beacab0e82e9b4ad.setIcon(icon_5155074f0501491bb881b06fb2fc0390);
+        
+    
+        var popup_6337c33c45074c28ac6f03521ec92834 = L.popup({"maxWidth": 500});
+
+        
+            var html_59f51f11789d4b45b0915e44601c8ed5 = $(`<div id="html_59f51f11789d4b45b0915e44601c8ed5" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Grow & Eat</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Grow & Eat is a new collaborative project by North Tyneside VODA with support from Public Health and Active North Tyneside. The aim of the project is to help communities in the North Tyneside area learn how to make more efficient use of their available space, whether that is public or private, in order to grow food and improve their physical and mental health.                          </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             2nd Floor, Customer First Centre, Spirit of North Tyneside Wing, 16 The Forum, Wallsend NE28 8JR                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> nan                         </div>                         <div>                             <strong>Tuesday:</strong> nan                         </div>                         <div>                             <strong>Wednesday:</strong> nan                         </div>                         <div>                             <strong>Thursday:</strong> nan                         </div>                         <div>                             <strong>Friday:</strong> nan                         </div>                         <div>                             <strong>Saturday:</strong> nan                         </div>                         <div>                             <strong>Sunday:</strong> nan                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://voda.org.uk/grow-eat/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_6337c33c45074c28ac6f03521ec92834.setContent(html_59f51f11789d4b45b0915e44601c8ed5);
+        
+
+        marker_cef893877cef4d44beacab0e82e9b4ad.bindPopup(popup_6337c33c45074c28ac6f03521ec92834)
+        ;
+
+        
+    
+    
+            marker_cef893877cef4d44beacab0e82e9b4ad.bindTooltip(
+                `<div>
+                     Grow & Eat
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4be60cc9089548888160a8b8937cf379 = L.marker(
+                [54.99453155, -1.533406725],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_59ff8d49335b46859b20895ef505346e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_4be60cc9089548888160a8b8937cf379.setIcon(icon_59ff8d49335b46859b20895ef505346e);
+        
+    
+        var popup_1c17f95c8e424aaab9155bee94adff3f = L.popup({"maxWidth": 500});
+
+        
+            var html_7d1ea3569c614555acad77283560bebb = $(`<div id="html_7d1ea3569c614555acad77283560bebb" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Wallsend Pantry</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             The Pop Up Pantry is a full mobile food shop, that will be operates in a number of communities across the city.  We provide the local community with access to a broad range high quality food and household goods at low cost.                          </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             The Allen, The Grn, Wallsend NE28 7NP                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Closed                         </div>                         <div>                             <strong>Tuesday:</strong> Closed                         </div>                         <div>                             <strong>Wednesday:</strong> Closed                         </div>                         <div>                             <strong>Thursday:</strong> Closed                         </div>                         <div>                             <strong>Friday:</strong> 10am-12pm                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.popup-pantry.uk/locations" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_1c17f95c8e424aaab9155bee94adff3f.setContent(html_7d1ea3569c614555acad77283560bebb);
+        
+
+        marker_4be60cc9089548888160a8b8937cf379.bindPopup(popup_1c17f95c8e424aaab9155bee94adff3f)
+        ;
+
+        
+    
+    
+            marker_4be60cc9089548888160a8b8937cf379.bindTooltip(
+                `<div>
+                     Wallsend Pantry
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b0766df25d4d47daa46db5f61313c3e1 = L.marker(
+                [55.04143642, -1.440732356],
+                {}
+            ).addTo(feature_group_ee82f2d2dba04b01b2cb044207302f40);
+        
+    
+            var icon_1f195e1b0b884e2da700f3f631804062 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_b0766df25d4d47daa46db5f61313c3e1.setIcon(icon_1f195e1b0b884e2da700f3f631804062);
+        
+    
+        var popup_ac563d1f91be48c9b3a323ae198b0f3d = L.popup({"maxWidth": 500});
+
+        
+            var html_6090d914dd0b49dd8cd0b426a032353f = $(`<div id="html_6090d914dd0b49dd8cd0b426a032353f" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Pay As You Can Pantry</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             There's a range of fresh fruit and veg, milk, bakery items, tins and dried goods. Good surplus food is provided to Whitley Bay Big Local by FareShare, Coop and Tesco. Food, donated by both retailers and producers, that would normally go to waste, can be used by disadvantaged people in our community, who otherwise would either have an absence of food or a poor diet. Food is being saved from going to waste thanks to our team of dedicated volunteers.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             158 Whitley Rd, Whitley Bay NE26 2LY                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Closed                         </div>                         <div>                             <strong>Tuesday:</strong> from 10am                         </div>                         <div>                             <strong>Wednesday:</strong> Closed                         </div>                         <div>                             <strong>Thursday:</strong> from 10am                         </div>                         <div>                             <strong>Friday:</strong> from 10am                         </div>                         <div>                             <strong>Saturday:</strong> from 10am                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.whitleybaybiglocal.org/community" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_ac563d1f91be48c9b3a323ae198b0f3d.setContent(html_6090d914dd0b49dd8cd0b426a032353f);
+        
+
+        marker_b0766df25d4d47daa46db5f61313c3e1.bindPopup(popup_ac563d1f91be48c9b3a323ae198b0f3d)
+        ;
+
+        
+    
+    
+            marker_b0766df25d4d47daa46db5f61313c3e1.bindTooltip(
+                `<div>
+                     Pay As You Can Pantry
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_8c48bd4567174e959d83f92bbafe31e5 = L.featureGroup(
+                {}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+        
+    
+            var marker_3446893b66c248bfb9fb332a24c995c0 = L.marker(
+                [55.01889009, -1.542983365],
+                {}
+            ).addTo(feature_group_8c48bd4567174e959d83f92bbafe31e5);
+        
+    
+            var icon_67a355d0c7574bcc9839c689024e4281 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bicycle", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_3446893b66c248bfb9fb332a24c995c0.setIcon(icon_67a355d0c7574bcc9839c689024e4281);
+        
+    
+        var popup_db852ee27dd2457a93a9aa72f444724b = L.popup({"maxWidth": 500});
+
+        
+            var html_176ec38dc62f4e21bc680de4aa6f6098 = $(`<div id="html_176ec38dc62f4e21bc680de4aa6f6098" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Bike4Health Workshop</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             We work on everything from routine fixes to complex suspension servicing: ebikes: adapted cycles and everything in between. We also offer collection & return: bike fitting: setup and adjustment advice: as well as custom wheel and bike builds.                          </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Unit 5A: North Tyne Industrial Estate: Whitley Rd: Benton: Newcastle upon Tyne NE12 9SZ                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> 8 am–5 pm                         </div>                         <div>                             <strong>Tuesday:</strong> 10 am–5 pm                         </div>                         <div>                             <strong>Wednesday:</strong> 9 am–5 pm                         </div>                         <div>                             <strong>Thursday:</strong> 9 am–7 pm                         </div>                         <div>                             <strong>Friday:</strong> 9 am–5 pm                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="http://www.bike4health.org/workshop/?gclid=Cj0KCQjw4s-kBhDqARIsAN-ipH2CQWSTMRC1bH8p-A5R2tZDJVICUh1Kq2YwijdMSsWtOnPm87mSIkQaAompEALw_wcB" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_db852ee27dd2457a93a9aa72f444724b.setContent(html_176ec38dc62f4e21bc680de4aa6f6098);
+        
+
+        marker_3446893b66c248bfb9fb332a24c995c0.bindPopup(popup_db852ee27dd2457a93a9aa72f444724b)
+        ;
+
+        
+    
+    
+            marker_3446893b66c248bfb9fb332a24c995c0.bindTooltip(
+                `<div>
+                     Bike4Health Workshop
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ef3851d85dad4faf890114709b1a1e98 = L.marker(
+                [55.0189416, -1.542953431],
+                {}
+            ).addTo(feature_group_8c48bd4567174e959d83f92bbafe31e5);
+        
+    
+            var icon_b5b06ca11402469eb2478e2807716c2e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "bicycle", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_ef3851d85dad4faf890114709b1a1e98.setIcon(icon_b5b06ca11402469eb2478e2807716c2e);
+        
+    
+        var popup_b7e4b803f62c495db6371919e9fde06f = L.popup({"maxWidth": 500});
+
+        
+            var html_79bbb3f58d27406c87fadcb85e083454 = $(`<div id="html_79bbb3f58d27406c87fadcb85e083454" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Bike4Health – Bike Service Cullercoats</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Bike Service Cullercoats. We have a fully equipped, full bike service workshop at our North East base, with highly qualified and experienced mechanics ready to service your bike(s).                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Unit 5A, North Tyne Industrial Estate, Whitley Rd, Benton, Newcastle upon Tyne, NE12 9SZ                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Monday, 8 am–5 pm                         </div>                         <div>                             <strong>Tuesday:</strong> Tuesday, 10 am–5 pm                         </div>                         <div>                             <strong>Wednesday:</strong> Wednesday, 9 am–5 pm                         </div>                         <div>                             <strong>Thursday:</strong> Thursday, 9 am–7 pm                         </div>                         <div>                             <strong>Friday:</strong> Friday, 9 am–5 pm                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.bike4health.org/bike-service-cullercoats/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_b7e4b803f62c495db6371919e9fde06f.setContent(html_79bbb3f58d27406c87fadcb85e083454);
+        
+
+        marker_ef3851d85dad4faf890114709b1a1e98.bindPopup(popup_b7e4b803f62c495db6371919e9fde06f)
+        ;
+
+        
+    
+    
+            marker_ef3851d85dad4faf890114709b1a1e98.bindTooltip(
+                `<div>
+                     Bike4Health – Bike Service Cullercoats
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_4e8d9a685c884ae982c376de622ad49f = L.featureGroup(
+                {}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+        
+    
+            var marker_3de2e4828e8f451799103fd7996bbc09 = L.marker(
+                [55.01250093, -1.4430708630000002],
+                {}
+            ).addTo(feature_group_4e8d9a685c884ae982c376de622ad49f);
+        
+    
+            var icon_662d6a67835c4b19b0fb6526eb549375 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "shopping-basket", "iconColor": "white", "markerColor": "darkblue", "prefix": "fa"}
+            );
+            marker_3de2e4828e8f451799103fd7996bbc09.setIcon(icon_662d6a67835c4b19b0fb6526eb549375);
+        
+    
+        var popup_c84921818a144839a272154536c1045b = L.popup({"maxWidth": 500});
+
+        
+            var html_a9e1eff579e841f9ac9ebd55d2131204 = $(`<div id="html_a9e1eff579e841f9ac9ebd55d2131204" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Huscrofts Decorative Salvage </u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             We buy and sell Vintage: Retro: Antique and Industrial items for your home or business                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             166: 167 Grey St: North Shields NE30 2EH                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Closed                         </div>                         <div>                             <strong>Tuesday:</strong> Closed                         </div>                         <div>                             <strong>Wednesday:</strong> 11 am–4 pm                         </div>                         <div>                             <strong>Thursday:</strong> 11 am–5 pm                         </div>                         <div>                             <strong>Friday:</strong> 11 am–5 pm                         </div>                         <div>                             <strong>Saturday:</strong> 9:30 am–5 pm                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.huscrofts.co.uk/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_c84921818a144839a272154536c1045b.setContent(html_a9e1eff579e841f9ac9ebd55d2131204);
+        
+
+        marker_3de2e4828e8f451799103fd7996bbc09.bindPopup(popup_c84921818a144839a272154536c1045b)
+        ;
+
+        
+    
+    
+            marker_3de2e4828e8f451799103fd7996bbc09.bindTooltip(
+                `<div>
+                     Huscrofts Decorative Salvage 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_66cc19e37cff449aa50bd451672f32fb = L.featureGroup(
+                {}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+        
+    
+            var marker_872cd9289d624f1a88f876eaa69b6024 = L.marker(
+                [55.01162643, -1.449051565],
+                {}
+            ).addTo(feature_group_66cc19e37cff449aa50bd451672f32fb);
+        
+    
+            var icon_be68ee229396443397ae8892c4f8b830 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "book", "iconColor": "white", "markerColor": "darkblue", "prefix": "fa"}
+            );
+            marker_872cd9289d624f1a88f876eaa69b6024.setIcon(icon_be68ee229396443397ae8892c4f8b830);
+        
+    
+        var popup_e51f46c8c7e74d428597fdc57cc1be0c = L.popup({"maxWidth": 500});
+
+        
+            var html_549be7f17759427aa161f986daf6e80f = $(`<div id="html_549be7f17759427aa161f986daf6e80f" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Keel Row Bookshop</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Keel Row Books is the longest established antiquarian and second-hand bookshop in the North East of England                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             11 Fenwick Terrace: Preston Rd: North Shields NE29 0LU                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> 10 am–5 pm                         </div>                         <div>                             <strong>Tuesday:</strong> 10 am–5 pm                         </div>                         <div>                             <strong>Wednesday:</strong> 10 am–5 pm                         </div>                         <div>                             <strong>Thursday:</strong> 10 am–5 pm                         </div>                         <div>                             <strong>Friday:</strong> 10 am–5 pm                         </div>                         <div>                             <strong>Saturday:</strong> 10 am–5 pm                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://keelrowbooks.com/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_e51f46c8c7e74d428597fdc57cc1be0c.setContent(html_549be7f17759427aa161f986daf6e80f);
+        
+
+        marker_872cd9289d624f1a88f876eaa69b6024.bindPopup(popup_e51f46c8c7e74d428597fdc57cc1be0c)
+        ;
+
+        
+    
+    
+            marker_872cd9289d624f1a88f876eaa69b6024.bindTooltip(
+                `<div>
+                     Keel Row Bookshop
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e5d6efc1e738428bb77dad6df38f8a56 = L.marker(
+                [55.03943762, -1.436908516],
+                {}
+            ).addTo(feature_group_66cc19e37cff449aa50bd451672f32fb);
+        
+    
+            var icon_822274ea2a524139b7990188d8bfa036 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "book", "iconColor": "white", "markerColor": "darkblue", "prefix": "fa"}
+            );
+            marker_e5d6efc1e738428bb77dad6df38f8a56.setIcon(icon_822274ea2a524139b7990188d8bfa036);
+        
+    
+        var popup_4097971ebd844a86a2202ed85a84cc69 = L.popup({"maxWidth": 500});
+
+        
+            var html_294b7e1527dd40eaa41d7de81c844733 = $(`<div id="html_294b7e1527dd40eaa41d7de81c844733" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Olivers Bookshop</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Great old shop stuffed to the ceilings with books of all hues: comics: magazines: cards and other bits and bobs.                          </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             48A Whitley Rd: Whitley Bay NE26 2NF                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> 11 am–4 pm                         </div>                         <div>                             <strong>Tuesday:</strong> Closed                         </div>                         <div>                             <strong>Wednesday:</strong> Closed                         </div>                         <div>                             <strong>Thursday:</strong> 11 am–4 pm                         </div>                         <div>                             <strong>Friday:</strong> 11 am–4 pm                         </div>                         <div>                             <strong>Saturday:</strong> 11 am–4 pm                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.instagram.com/olivers_bookshop_whitley_bay/?hl=en-gb" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_4097971ebd844a86a2202ed85a84cc69.setContent(html_294b7e1527dd40eaa41d7de81c844733);
+        
+
+        marker_e5d6efc1e738428bb77dad6df38f8a56.bindPopup(popup_4097971ebd844a86a2202ed85a84cc69)
+        ;
+
+        
+    
+    
+            marker_e5d6efc1e738428bb77dad6df38f8a56.bindTooltip(
+                `<div>
+                     Olivers Bookshop
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_c1d1fe3927a04d66bd16b58293a815bc = L.featureGroup(
+                {}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+        
+    
+            var marker_75791800ab7e43868d5d6cd08fe9c8fe = L.marker(
+                [55.00760319, -1.445656993],
+                {}
+            ).addTo(feature_group_c1d1fe3927a04d66bd16b58293a815bc);
+        
+    
+            var icon_d8c12ac414e542cb922cf410c28f7794 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "gift", "iconColor": "white", "markerColor": "darkblue", "prefix": "fa"}
+            );
+            marker_75791800ab7e43868d5d6cd08fe9c8fe.setIcon(icon_d8c12ac414e542cb922cf410c28f7794);
+        
+    
+        var popup_9afc00b8fcab42aa83cae8017419e717 = L.popup({"maxWidth": 500});
+
+        
+            var html_cc71c7a160514883bfe7976baf579fed = $(`<div id="html_cc71c7a160514883bfe7976baf579fed" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Community Relove</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Community Relove is a not-for-profit Community Interest Company established to provide sustainable preloved products back to the community.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             6 - 8 Saville St, North Shields NE29 6QW                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> 9 am–3 pm                         </div>                         <div>                             <strong>Tuesday:</strong> 9 am–3 pm                         </div>                         <div>                             <strong>Wednesday:</strong> 9 am–3 pm                         </div>                         <div>                             <strong>Thursday:</strong> 9 am–3 pm                         </div>                         <div>                             <strong>Friday:</strong> 9 am–3 pm                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.communityrelove.org/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_9afc00b8fcab42aa83cae8017419e717.setContent(html_cc71c7a160514883bfe7976baf579fed);
+        
+
+        marker_75791800ab7e43868d5d6cd08fe9c8fe.bindPopup(popup_9afc00b8fcab42aa83cae8017419e717)
+        ;
+
+        
+    
+    
+            marker_75791800ab7e43868d5d6cd08fe9c8fe.bindTooltip(
+                `<div>
+                     Community Relove
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe375d96c1144aa180e9b802500cd503 = L.marker(
+                [54.99450981, -1.5333876480000002],
+                {}
+            ).addTo(feature_group_c1d1fe3927a04d66bd16b58293a815bc);
+        
+    
+            var icon_51e4750107c645e2aabdbf30b236fc61 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "gift", "iconColor": "white", "markerColor": "darkblue", "prefix": "fa"}
+            );
+            marker_fe375d96c1144aa180e9b802500cd503.setIcon(icon_51e4750107c645e2aabdbf30b236fc61);
+        
+    
+        var popup_2482a7ed0fe74b04adfb416b744ec97a = L.popup({"maxWidth": 500});
+
+        
+            var html_cd7204dbb06a44f39abf5b1ef9e82dc6 = $(`<div id="html_cd7204dbb06a44f39abf5b1ef9e82dc6" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Grass Boots</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             We believe that every family and child deserves a chance to get involved in sports and education. The footwear Grassboots provides will enable them to participate in grass roots sport, outdoor play, school and other activities. With connections to different sports centres across the north east, the team are able to get collections of shoes and trainers on a regular basis. These are then brought into our compassion centre where they can be sorted and distributed by our brilliant team of volunteers.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             The Allen, The Grn, Wallsend NE28 7NP                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Online                         </div>                         <div>                             <strong>Tuesday:</strong> Online                         </div>                         <div>                             <strong>Wednesday:</strong> Online                         </div>                         <div>                             <strong>Thursday:</strong> Online                         </div>                         <div>                             <strong>Friday:</strong> Online                         </div>                         <div>                             <strong>Saturday:</strong> Online                         </div>                         <div>                             <strong>Sunday:</strong> Online                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.lifevineyard.church/grassboots" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_2482a7ed0fe74b04adfb416b744ec97a.setContent(html_cd7204dbb06a44f39abf5b1ef9e82dc6);
+        
+
+        marker_fe375d96c1144aa180e9b802500cd503.bindPopup(popup_2482a7ed0fe74b04adfb416b744ec97a)
+        ;
+
+        
+    
+    
+            marker_fe375d96c1144aa180e9b802500cd503.bindTooltip(
+                `<div>
+                     Grass Boots
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_02c9d1ceee0e4419a62ce3f236e450ed = L.marker(
+                [55.004107999999995, -1.46420326],
+                {}
+            ).addTo(feature_group_c1d1fe3927a04d66bd16b58293a815bc);
+        
+    
+            var icon_a01badda343246c6a501d97db0dc2b5b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "gift", "iconColor": "white", "markerColor": "darkblue", "prefix": "fa"}
+            );
+            marker_02c9d1ceee0e4419a62ce3f236e450ed.setIcon(icon_a01badda343246c6a501d97db0dc2b5b);
+        
+    
+        var popup_e1348fdbdc514e4f8984bc2c85568826 = L.popup({"maxWidth": 500});
+
+        
+            var html_a2e063f3d8234aa3ad7786b6081782d1 = $(`<div id="html_a2e063f3d8234aa3ad7786b6081782d1" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>The Kit Hub</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             To help tackle the climate emergency and give access to active wear to those who aren’t able to buy new, The Kit Hub is a resource where you can visit to donate, take, or swap items of clothing for children, young people and adults suitable for physical activity; from leggings and joggers to vests and hoodys!  If you have any items you’d like to donate to The Kit Hub, you can do so at North Tyneside leisure centres, or North Tyneside Council offices on Cobalt Business Park.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Cedarwood Centre, The Avenue, Avon Ave, North Shields NE29 7QT                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Closed                         </div>                         <div>                             <strong>Tuesday:</strong> Closed                         </div>                         <div>                             <strong>Wednesday:</strong> 9.30am - 11am                         </div>                         <div>                             <strong>Thursday:</strong> Closed                         </div>                         <div>                             <strong>Friday:</strong> Closed                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.activenorthtyneside.org.uk/news/introducing-the-kit-hub-encouraging-upcycling-and-swapping-unwanted-active-wear" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_e1348fdbdc514e4f8984bc2c85568826.setContent(html_a2e063f3d8234aa3ad7786b6081782d1);
+        
+
+        marker_02c9d1ceee0e4419a62ce3f236e450ed.bindPopup(popup_e1348fdbdc514e4f8984bc2c85568826)
+        ;
+
+        
+    
+    
+            marker_02c9d1ceee0e4419a62ce3f236e450ed.bindTooltip(
+                `<div>
+                     The Kit Hub
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_41d055a73847494996d82a7237011928 = L.featureGroup(
+                {}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+        
+    
+            var marker_609899f76fc24a388dd46d7ffa9e0070 = L.marker(
+                [55.01012918, -1.448282785],
+                {}
+            ).addTo(feature_group_41d055a73847494996d82a7237011928);
+        
+    
+            var icon_6f11f76cd3c74a23b3c0dfbbbaf9ba55 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_609899f76fc24a388dd46d7ffa9e0070.setIcon(icon_6f11f76cd3c74a23b3c0dfbbbaf9ba55);
+        
+    
+        var popup_3826cec8dfe04f0ab3c77e11fffd55af = L.popup({"maxWidth": 500});
+
+        
+            var html_3115b4ba04a8468fbd57f362db064449 = $(`<div id="html_3115b4ba04a8468fbd57f362db064449" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Reloved the Wrightway</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Upcycling furniture and repair. We listen to your needs and create something to suit your requirements and budget.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Albion Terrace, North Shields NE29 0AP                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> Open 24 hours                         </div>                         <div>                             <strong>Tuesday:</strong> Open 24 hours                         </div>                         <div>                             <strong>Wednesday:</strong> Open 24 hours                         </div>                         <div>                             <strong>Thursday:</strong> Open 24 hours                         </div>                         <div>                             <strong>Friday:</strong> Open 24 hours                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://reloved-the-wrightway.business.site/?utm_source=gmb&utm_medium=referral" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_3826cec8dfe04f0ab3c77e11fffd55af.setContent(html_3115b4ba04a8468fbd57f362db064449);
+        
+
+        marker_609899f76fc24a388dd46d7ffa9e0070.bindPopup(popup_3826cec8dfe04f0ab3c77e11fffd55af)
+        ;
+
+        
+    
+    
+            marker_609899f76fc24a388dd46d7ffa9e0070.bindTooltip(
+                `<div>
+                     Reloved the Wrightway
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5896eaece5ff4f01abb8bd3e5fcc1fc6 = L.marker(
+                [55.01542947, -1.4438498080000002],
+                {}
+            ).addTo(feature_group_41d055a73847494996d82a7237011928);
+        
+    
+            var icon_0df79a0cff9c43d0bbce6bdd366ee09e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "darkblue", "prefix": "fa"}
+            );
+            marker_5896eaece5ff4f01abb8bd3e5fcc1fc6.setIcon(icon_0df79a0cff9c43d0bbce6bdd366ee09e);
+        
+    
+        var popup_404795d4845d46edaa1e49bdccf18343 = L.popup({"maxWidth": 500});
+
+        
+            var html_fa6997bde07f4b1da3bcef2f1e37ef61 = $(`<div id="html_fa6997bde07f4b1da3bcef2f1e37ef61" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>The Shed</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             The first of its kind in North Tyneside to be registered with Men’s Shed UK, The Shed is somewhere for men to meet, socialise, skill-share and take part in creative, mending and upcycling woodwork activities. The emphasis is on encouraging community involvement by older, bereaved, retired, veterans or carers, those socially isolated or in health recovery. Whilst men are encouraged as main beneficiaries of The Shed, women are also very welcome.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Linskill Terrace, North Shields NE30 2AY                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> nan                         </div>                         <div>                             <strong>Tuesday:</strong> nan                         </div>                         <div>                             <strong>Wednesday:</strong> nan                         </div>                         <div>                             <strong>Thursday:</strong> nan                         </div>                         <div>                             <strong>Friday:</strong> nan                         </div>                         <div>                             <strong>Saturday:</strong> nan                         </div>                         <div>                             <strong>Sunday:</strong> nan                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://linskill.org/community-programme/#the-shed" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_404795d4845d46edaa1e49bdccf18343.setContent(html_fa6997bde07f4b1da3bcef2f1e37ef61);
+        
+
+        marker_5896eaece5ff4f01abb8bd3e5fcc1fc6.bindPopup(popup_404795d4845d46edaa1e49bdccf18343)
+        ;
+
+        
+    
+    
+            marker_5896eaece5ff4f01abb8bd3e5fcc1fc6.bindTooltip(
+                `<div>
+                     The Shed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_e6337b416dca43bd8445b2231d72bcfb = L.featureGroup(
+                {}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+        
+    
+            var marker_f793e84f025940968784b6c0f5a0d8f0 = L.marker(
+                [54.9943905, -1.535808874],
+                {}
+            ).addTo(feature_group_e6337b416dca43bd8445b2231d72bcfb);
+        
+    
+            var icon_2d086804b3c04cc4b6c45507c9bb6bd4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "rocket", "iconColor": "white", "markerColor": "darkblue", "prefix": "fa"}
+            );
+            marker_f793e84f025940968784b6c0f5a0d8f0.setIcon(icon_2d086804b3c04cc4b6c45507c9bb6bd4);
+        
+    
+        var popup_f73760251ef84a439a5fefc08e4cc369 = L.popup({"maxWidth": 500});
+
+        
+            var html_e8fd41245ae841d0b1a219aff342490e = $(`<div id="html_e8fd41245ae841d0b1a219aff342490e" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Baby Equipment Loan Service</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             We support North Tyneside families by providing a wide selection of baby equipment available to loan at a subsidised cost.  Our Toy Library Membership gives children aged from birth -15 access to over 4000 toys and games. The Toy Library is  accessible to families in North Tyneside enabling children to access a range of fun and educational toys while supporting environmental sustainability. Membership covers borrowing up to 2 toys per month, per child (or you can swap more frequently if you wish!)                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Footprints Day Nursery & Children’s Centre, North Road, NE28 8RH Wallsend                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> 9:30 am–5 pm                         </div>                         <div>                             <strong>Tuesday:</strong> 9:30 am–5 pm                         </div>                         <div>                             <strong>Wednesday:</strong> 9:30 am–5 pm                         </div>                         <div>                             <strong>Thursday:</strong> Closed                         </div>                         <div>                             <strong>Friday:</strong> 9:30 am–3:30 pm                         </div>                         <div>                             <strong>Saturday:</strong> Closed                         </div>                         <div>                             <strong>Sunday:</strong> Closed                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.belsnorthtyneside.org.uk/" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_f73760251ef84a439a5fefc08e4cc369.setContent(html_e8fd41245ae841d0b1a219aff342490e);
+        
+
+        marker_f793e84f025940968784b6c0f5a0d8f0.bindPopup(popup_f73760251ef84a439a5fefc08e4cc369)
+        ;
+
+        
+    
+    
+            marker_f793e84f025940968784b6c0f5a0d8f0.bindTooltip(
+                `<div>
+                     Baby Equipment Loan Service
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_9e11161a6c834cdaa67a47d5d57caaca = L.featureGroup(
+                {}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+        
+    
+            var marker_524cc0e212c146ce812436a3911a0515 = L.marker(
+                [55.00486538, -1.4870748669999998],
+                {}
+            ).addTo(feature_group_9e11161a6c834cdaa67a47d5d57caaca);
+        
+    
+            var icon_b7d57e29b8f44e0484d9d58f28c9454a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "wheelchair", "iconColor": "white", "markerColor": "darkblue", "prefix": "fa"}
+            );
+            marker_524cc0e212c146ce812436a3911a0515.setIcon(icon_b7d57e29b8f44e0484d9d58f28c9454a);
+        
+    
+        var popup_c01f6287c2184f6fae967d1b97305bd6 = L.popup({"maxWidth": 500});
+
+        
+            var html_c54146904eb0407fbd8871ece9cb2a76 = $(`<div id="html_c54146904eb0407fbd8871ece9cb2a76" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Adaptations & Loan Equipment Service</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             The Adaptations & Loan Equipment Service is managed by North Tyneside Council and is available to everyone living in North Tyneside who may need any adaptation to their home or provision of a piece of equipment to support hospital discharge, admission avoidance and remain living independently in their home.  We deal with two distinct areas, the Provision of adaptations and the loaning of equipment. Our service is available following an assessment of need by an Occupational Therapist, Social Worker, District Nurse or Physiotherapist.                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Unit G8, North Shields NE29 7SZ                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> nan                         </div>                         <div>                             <strong>Tuesday:</strong> nan                         </div>                         <div>                             <strong>Wednesday:</strong> nan                         </div>                         <div>                             <strong>Thursday:</strong> nan                         </div>                         <div>                             <strong>Friday:</strong> nan                         </div>                         <div>                             <strong>Saturday:</strong> nan                         </div>                         <div>                             <strong>Sunday:</strong> nan                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://www.livingwellnorthtyneside.co.uk/providers/57" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_c01f6287c2184f6fae967d1b97305bd6.setContent(html_c54146904eb0407fbd8871ece9cb2a76);
+        
+
+        marker_524cc0e212c146ce812436a3911a0515.bindPopup(popup_c01f6287c2184f6fae967d1b97305bd6)
+        ;
+
+        
+    
+    
+            marker_524cc0e212c146ce812436a3911a0515.bindTooltip(
+                `<div>
+                     Adaptations & Loan Equipment Service
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_d1672df44d4d485dba866f90515e79b3 = L.featureGroup(
+                {}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+        
+    
+            var marker_309adf89572447998b02504cdf40a9a2 = L.marker(
+                [55.00809371, -1.4504811030000002],
+                {}
+            ).addTo(feature_group_d1672df44d4d485dba866f90515e79b3);
+        
+    
+            var icon_5f5eedc392bc4aa88770fa5bc1c9eff8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_309adf89572447998b02504cdf40a9a2.setIcon(icon_5f5eedc392bc4aa88770fa5bc1c9eff8);
+        
+    
+        var popup_fe333d40871b4575a6fbc86ca9593fc6 = L.popup({"maxWidth": 500});
+
+        
+            var html_d37ea6add3a049b7a7f09c22625b3f8c = $(`<div id="html_d37ea6add3a049b7a7f09c22625b3f8c" style="width: 100.0%; height: 100.0%;">     <!DOCTYPE html>     <html>     <head>         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">         <style>             body {                 font-family: 'Poppins', sans-serif;             }             .popup-container {                 text-align: center;             }         </style>     </head>     <body>         <h1 align="center" style="font-family:Poppins; color:Blue"><strong><u>Lovaine Community Garden</u><strong></h1>         <div class="popup-container">             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">                 <div class="panel panel-default" style="text-align: left; border-color: #ffffff !important;">                     <div class="panel-heading" role="tab" id="headingOne" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">                                 <strong> <i class="fa fa-newspaper-o"></i> About <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span></strong>                             </a>                         </h4>                     </div>                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Alongside promoting gardening as a health benefit for physical and mental wellbeing and providing a maintained site to do so - we also distribute fresh produce and excess plants to the local community, organise and run nature, wildlife and craft activities and host open days, community get togethers and cultural events to promote nature and our local area as an inspirational space for art, music, sculpture and poetry                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingThree" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">                                 <strong><i class="fa fa-map-marker"></i> Location <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">                         <div class="panel-body" align="justify" style="font-family:Poppins">                             Junction of Lovaine Place and, Cecil St, North Shields NE29 0DH                         </div>                     </div>                 </div>                 <div class="panel panel-default" style="text-align: left !important; border-color: #ffffff!important;">                     <div class="panel-heading" role="tab" id="headingFour" style="background: #ffffff!important;font-family:Poppins">                         <h4 class="panel-title" style="color:cornflowerblue">                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">                                 <strong><i class="fa fa-clock-o"></i> Opening hours <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="float: right;"></span> </strong>                             </a>                         </h4>                     </div>                     <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">                         <div class="panel-body" align="justify" style="font-family:Poppins">                         <div>                             <strong>Monday:</strong> 10am - 3pm                         </div>                         <div>                             <strong>Tuesday:</strong> 10am - 3pm                         </div>                         <div>                             <strong>Wednesday:</strong> nan                         </div>                         <div>                             <strong>Thursday:</strong> nan                         </div>                         <div>                             <strong>Friday:</strong> nan                         </div>                         <div>                             <strong>Saturday:</strong> nan                         </div>                         <div>                             <strong>Sunday:</strong> nan                         </div>                         </div>                     </div>                 </div>             </div>             <div class="popup-container" style="font-family:Poppins">                 <a href="https://lovainegarden.com/#" target="_blank">Visit Website</a>  <!-- Add the hyperlink with the appropriate href attribute -->             </div>         </div>     </body>     </html>     </div>`)[0];
+            popup_fe333d40871b4575a6fbc86ca9593fc6.setContent(html_d37ea6add3a049b7a7f09c22625b3f8c);
+        
+
+        marker_309adf89572447998b02504cdf40a9a2.bindPopup(popup_fe333d40871b4575a6fbc86ca9593fc6)
+        ;
+
+        
+    
+    
+            marker_309adf89572447998b02504cdf40a9a2.bindTooltip(
+                `<div>
+                     Lovaine Community Garden
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_5cd9b901e06043729d228d66f19ba6f2 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_9469f3ee543b40e7b29e9cba63c7efc4,
+                },
+                overlays :  {
+                    "Food" : feature_group_ee82f2d2dba04b01b2cb044207302f40,
+                    "Bikes" : feature_group_8c48bd4567174e959d83f92bbafe31e5,
+                    "Homeware" : feature_group_4e8d9a685c884ae982c376de622ad49f,
+                    "Books" : feature_group_66cc19e37cff449aa50bd451672f32fb,
+                    "Clothes" : feature_group_c1d1fe3927a04d66bd16b58293a815bc,
+                    "Furniture" : feature_group_41d055a73847494996d82a7237011928,
+                    "Toys" : feature_group_e6337b416dca43bd8445b2231d72bcfb,
+                    "Equipment" : feature_group_9e11161a6c834cdaa67a47d5d57caaca,
+                    "Gardening" : feature_group_d1672df44d4d485dba866f90515e79b3,
+                },
+            };
+            L.control.layers(
+                layer_control_5cd9b901e06043729d228d66f19ba6f2.base_layers,
+                layer_control_5cd9b901e06043729d228d66f19ba6f2.overlays,
+                {"autoZIndex": false, "collapsed": false, "position": "topright"}
+            ).addTo(map_654afaa1b57e42c996bee693ebfc3a8f);
+            feature_group_ee82f2d2dba04b01b2cb044207302f40.remove();
+            feature_group_8c48bd4567174e959d83f92bbafe31e5.remove();
+            feature_group_4e8d9a685c884ae982c376de622ad49f.remove();
+            feature_group_66cc19e37cff449aa50bd451672f32fb.remove();
+            feature_group_c1d1fe3927a04d66bd16b58293a815bc.remove();
+            feature_group_41d055a73847494996d82a7237011928.remove();
+            feature_group_e6337b416dca43bd8445b2231d72bcfb.remove();
+            feature_group_9e11161a6c834cdaa67a47d5d57caaca.remove();
+            feature_group_d1672df44d4d485dba866f90515e79b3.remove();
+        
+</script>
